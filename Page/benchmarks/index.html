@@ -1,0 +1,132 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>PyDial benchmarking environment &#8212; PyDial 1.0.0 documentation</title>
+
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="top" title="PyDial 1.0.0 documentation" href="#" />
+    <link rel="next" title="Agent - the Complete Dialogue System" href="Agent.html" />
+
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+   <script>
+    function supportsImports() {
+      return 'import' in document.createElement('link');
+    }
+
+// if (supportsImports()) {
+//   document.write('<link rel="import" href="http://example.com/elements.html">');
+// }
+
+</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+
+  <div class="section" id="pydial-the-cued-python-statistical-dialog-system">
+<h1>PyDial<a class="headerlink" href="#pydial-the-cued-python-statistical-dialog-system" title="Permalink to this headline"></a></h1>
+<div class="section" id="welcome">
+<h2>Benchmarking environment<a class="headerlink" href="#welcome" title="Permalink to this headline"></a></h2>
+<p>PyDial offers the opportunity to develop a Reinforcement Learning based Dialogue Management benchmarking environment, where a fair comparison between different algorithms interacting with a varied set of dialogue environments. Here, we introduce the benchmarking setup presented in <a href="https://arxiv.org/abs/1711.11023" target=_blank>Casanueva et al. 2017</a>, where 18 dialogue environments spaning different noise conditions, user behaviours and different domains are introduced. In addition, 4 state of the art dialogue policy optimisation algorithms are compared in these environments.</p>
+<p>To run the benchmarking tasks, first <a href="https://gitlab.cs.uni-duesseldorf.de/general/dsml/pydial3-public" target=_blank>download PyDial</a> and install the requirements. The config files specifying the different environments can be found in</p>
+<pre><code style="font-size:80%">
+PYDIAL_DIR/config/pydial_benchmarks
+</code></pre>
+<p>Then, run the benchmarking task selected using the pydial.py train command:</p>
+<pre><code style="font-size:80%">
+python pydial.py train config/pydial_benchmarks/env1-hdc-CR.cfg --seed=(0,9)
+</code></pre>
+<p> Note that in some terminals you might have to write \ before the opening and closing parentheses -i.e. --seed=\(0,9\). This command will run the environment 1 in the Cambridge Restaurants domain for 10 different seeds using the handcrafted policy. To run a different environment, just select a different config file. To run one of the benchmarked RL algorithms, open the config file and uncomment the parameters for that algorithm. Due to updates in the environment code, the results obtained might differ to the ones presented in the paper, but the difference shouldn't be statistically significant.</p>
+<p> To print the mean results for all the seeds, run the pydial.py plot command giving as arguments the list of logfiles:</p>
+<pre><code style="font-size:80%">
+python pydial.py plot --noplot _benchmarklogs/env1-hdc-CR-seed*-00.1-4.train.log
+</code></pre>
+<hr/ style="width:100%">
+
+<!-- <hr/ style="width:100%"> -->
+<p>In the future, we plan to extend these benchmarks with more challenging environments. The benchmarking environment will be updated as these tasks are developed.</p>
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="#">
+    <img class="logo" src="../_static/hhu-logo.png" alt="Logo"/>
+
+    <!-- <h1 class="logo logo-name" style="text-align:center">PyDial</h1> -->
+
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<!-- <h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Agent.html">Agent - the Complete Dialogue System</a></li>
+</ul> -->
+
+</div>
+<hr/ style="width:100%">
+<p align="center">
+<a href="https://pydial.cs.hhu.de/" target=_blank style="font-size: 120%; color: #2e7ec8;">Home Page</a>
+</p>
+<p align="center">
+<p align="center">
+<a href="https://gitlab.cs.uni-duesseldorf.de/general/dsml/pydial3-public" target=_blank style="font-size: 120%; color: #2e7ec8;">Download the code</a>
+</p>
+<p align="center">
+<a href="../Docs/" target=_blank style="font-size: 120%; color: #2e7ec8;">Documentation</a>
+</p>
+<hr style="border-top: dashed 1px; width:100%; background-color:white" />
+<p align="center">
+  <a href="https://www.cs.hhu.de/lehrstuehle-und-arbeitsgruppen/dialog-systems-and-machine-learning.html" target=_blank style="font-size: 120%; color: #2e7ec8;">Dialogue Systems and Machine Learning Group</a><br />
+</p>
+<hr/ style="width:100%">
+
+
+
+
+  </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015-2017, Dialogue Systems Group, University of Cambridge.
+
+      |
+      <a href="https://www.uni-duesseldorf.de/home/footer/datenschutz.html" target=_blank>Datenschutz</a>
+      <a href="https://www.uni-duesseldorf.de/home/footer/impressum.html" target=_blank>Impressum</a>
+      |
+      Powered by <a href="https://github.com/bitprophet/alabaster" target=_blank >Alabaster 0.7.9</a>
+    </div>
+
+
+
+
+  </body>
+</html>

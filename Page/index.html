@@ -1,0 +1,236 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>PyDial3: The Python3 Statistical Dialog System &#8212; PyDial 1.0.0 documentation</title>
+
+  <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="top" title="PyDial 1.0.0 documentation" href="#" />
+  <link rel="next" title="Agent - the Complete Dialogue System" href="Agent.html" />
+
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+  <script>
+    function supportsImports() {
+      return 'import' in document.createElement('link');
+    }
+
+// if (supportsImports()) {
+//   document.write('<link rel="import" href="http://example.com/elements.html">');
+// }
+
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+</head>
+
+<body role="document">
+
+
+  <div class="document">
+    <div class="documentwrapper">
+      <div class="bodywrapper">
+        <div class="body" role="main">
+
+          <div class="section" id="pydial3-the-python3-statistical-dialog-system">
+            <h1>PyDial 3.0<a class="headerlink" href="#pydial3-cued-python3-statistical-dialog-system"
+                title="Permalink to this headline"></a></h1>
+            <div class="section" id="welcome">
+              <h2>The Python Multi-domain Statistical Dialogue System Toolkit<a class="headerlink" href="#welcome"
+                  title="Permalink to this headline"></a></h2>
+              <p>Welcome to the PyDial website. PyDial is an open-source end-to-end statistical spoken dialogue system
+                toolkit which provides implementations of statistical approaches for all dialogue system modules.
+                Moreover, it has been extended to provide multi-domain conversational functionality. It offers easy
+                configuration, easy extensibility, and domain-independent implementations of the respective dialogue
+                system modules.</p>
+              <p>PyDial is a scientific system developed for scientific purposes and actively used for research by the
+                <a href="https://www.cs.hhu.de/en/research-groups/dialog-systems-and-machine-learning.html"
+                  target=_blank>Dialogue Systems and Machine Learning Group</a> at the Heinrich-Heine University,
+                Düsseldorf. Although we put great effort into designing clean interfaces and easily understandable
+                structures, some the code will not necessarily be up to commercial standards. As it is used actively for
+                research, the code may also change in the future. However, the core intefaces have been designed in a
+                way that there should not be any need to change them.</p>
+              <!-- <p>The toolkit will be made available soon. In the meantime, have a look at the <a href="Docs/">tutorials and documentation</a>.</p> -->
+              <!--<p>To get started, <a href="cu-pydial.zip">download</a> the toolkit, have a look at the README for instructions to get it running and / or have a look at the <a href="Docs/">tutorials and documentation</a>. The final relsease will be made directly accessible through a git repository.</p>-->
+              <p>To stay up to date, <a href="https://groups.google.com/forum/#!forum/pydial/join" target=_blank>sign up
+                  to our mailing list</a>.
+
+                <!-- <hr/ style="width:100%"> -->
+              <p>To cite PyDial, please use the following paper:
+                <!-- <br />
+<br />
+S. Ultes, L. Rojas-Barahona, P. Su, D. Vandyke, D. Kim, I. Casanueva, P. Budzianowski, T. Wen, M. Gašić and S. Young<br />
+<b>PyDial: A Multi-domain Statistical Dialogue System Toolkit</b><br />
+Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics-System Demonstrations, ACL, Vancouver, August 2017 -->
+              <pre><code style="font-size:80%">@InProceedings{ultes2017pydial,
+  author    = {Ultes, Stefan  and  Rojas Barahona, Lina M.  and  Su, Pei-Hao  and  Vandyke, David  and  Kim, Dongho  and  Casanueva, I\~{n}igo  and  Budzianowski, Pawe{\l}  and  Mrk\v{s}i\'{c}, Nikola  and  Wen, Tsung-Hsien  and  Gasic, Milica  and  Young, Steve},
+  title     = {{PyDial: A Multi-domain Statistical Dialogue System Toolkit}},
+  booktitle = {Proceedings of ACL 2017, System Demonstrations},
+  month     = {July},
+  year      = {2017},
+  address   = {Vancouver, Canada},
+  publisher = {Association for Computational Linguistics},
+  pages     = {73--78},
+  url       = {http://aclweb.org/anthology/P17-4013}
+}
+</code></pre>
+
+              <!-- <p><a href="http://camdial.org/~sdsgroup/pydial/demo/pydial-demo.py">Talk to the demo system about restaurants in Cambridge.</a></p> -->
+
+              <div class="section" id="acknowledgements">
+                <h1>Acknowledgements<a class="headerlink" href="#acknowledgements"
+                    title="Permalink to this headline">¶</a></h1>
+                <p>PyDial was originally developed by the Dialogue Systems Group at Cambridge University Engineering
+                  Department (CUED).</p>
+                <p>The following current and former group members have contributed to PyDial (in alphabetical order):
+                </p>
+                <ul class="simple">
+                  <li>
+                    <p>Paweł Budzianowski</p>
+                  </li>
+                  <li>
+                    <p>Abdallah Bashir</p>
+                  </li>
+                  <li>
+                    <p>Iñigo Casanueva</p>
+                  </li>
+                  <li>
+                    <p>Milica Gašić</p>
+                  </li>
+                  <li>
+                    <p>Christian Geishauser</p>
+                  </li>
+                  <li>
+                    <p>Michael Heck</p>
+                  </li>
+                  <li>
+                    <p>Songbo Hu</p>
+                  </li>
+                  <li>
+                    <p>Dongho Kim</p>
+                  </li>
+                  <li>
+                    <p>Hsien-Chin Lin</p>
+                  </li>
+                  <li>
+                    <p>Nurul Fithria Lubis</p>
+                  </li>
+                  <li>
+                    <p>Marco Moresi</p>
+                  </li>
+                  <li>
+                    <p>Nikola Mrkšić</p>
+                  </li>
+                  <li>
+                    <p>Lina Rojas-Barahona</p>
+                  </li>
+                  <li>
+                    <p>Stefan Ultes</p>
+                  </li>
+                  <li>
+                    <p>Pei-Hao Su</p>
+                  </li>
+                  <li>
+                    <p>David Vandyke</p>
+                  </li>
+                  <li>
+                    <p>Carel van Niekerk</p>
+                  </li>
+                  <li>
+                    <p>Paula Wesselmann</p>
+                  </li>
+                  <li>
+                    <p>Gellert Weisz</p>
+                  </li>
+                  <li>
+                    <p>Tsung-Hsien Wen</p>
+                  </li>
+                  <li>
+                    <p>Yen-Chen Wu</p>
+                  </li>
+                  <li>
+                    <p>Steve Young</p>
+                  </li>
+                </ul>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebarwrapper">
+        <p class="logo">
+          <a href="#">
+            <img class="logo" src="_static/hhu-logo.png" alt="Logo" />
+
+            <!-- <h1 class="logo logo-name" style="text-align:center">PyDial</h1> -->
+
+          </a>
+        </p>
+
+
+
+
+
+
+
+
+        <!-- <h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Agent.html">Agent - the Complete Dialogue System</a></li>
+</ul> -->
+
+      </div>
+      <hr / style="width:100%">
+      <p align="center">
+        <a href="https://gitlab.cs.uni-duesseldorf.de/general/dsml/pydial3-public" target=_blank
+          style="font-size: 120%; color: #2e7ec8;">Download the code</a>
+      </p>
+      <p align="center">
+        <a href="Docs/" target=_blank style="font-size: 120%; color: #2e7ec8;">Documentation</a>
+      </p>
+      <p align="center">
+        <a href="benchmarks/" target=_blank style="font-size: 120%; color: #2e7ec8;">Benchmarking environment</a>
+      </p>
+      <hr style="border-top: dashed 1px; width:100%; background-color:white" />
+      <p align="center">
+        <a href="https://groups.google.com/forum/#!forum/pydial/join" target=_blank
+          style="font-size: 120%; color: #2e7ec8;">Sign up to the mailing list</a>
+      </p>
+      <hr style="border-top: dashed 1px; width:100%; background-color:white" />
+      <p align="center">
+        <a href="https://www.cs.hhu.de/en/research-groups/dialog-systems-and-machine-learning.html" target=_blank
+          style="font-size: 120%; color: #2e7ec8;">Dialogue Systems and Machine Learning Group</a><br />
+      </p>
+      <hr / style="width:100%">
+
+
+
+
+    </div>
+  </div>
+  <div class="clearer"></div>
+  </div>
+  <div class="footer">
+    &copy;2015-2019, Dialogue Systems Group, University of Cambridge, 2019-2021, Dialogue Systems and Machine Learning
+    Group, Heinrich-Heine University Düsseldorf.
+
+    |
+    <a href="https://www.uni-duesseldorf.de/home/footer/datenschutz.html" target=_blank>Datenschutz</a>
+    <a href="https://www.uni-duesseldorf.de/home/footer/impressum.html" target=_blank>Impressum</a>
+    |
+    Powered by <a href="https://github.com/bitprophet/alabaster" target=_blank>Alabaster 0.7.9</a>
+  </div>
+
+
+
+
+</body>
+
+</html>
